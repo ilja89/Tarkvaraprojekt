@@ -1,0 +1,9 @@
+	CHARACTERISTICS
+Intellect - show how clever character is. Small affect on prices.
+Agility - show how agile character is. Small affect on chance to damage enemy, big affect on chance to avoid enemy attack, stamina bonus.
+Strength && Martial arts - show how strong character is and how is it good at killing anyone. Big affect on chance to damage enemy, small affect on chance to avoid enemy attack, HP bonus.
+Charizma - show how good character is in talking to other creatures. Medium affect on prices.
+Luck - show how lucky character is. Affects on chance of positive result of event and random positive event chance.
+
+
+	SKILLS
