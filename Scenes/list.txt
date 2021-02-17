@@ -1,0 +1,19 @@
++ 1 - road intersection
++ 2 - unknown forest
++ 3 - angry bear
++ 4 - river in the forest
++ 5 - toxic berries
++ 6 - good berries
++ 7 - hunter
++ 8 - dangerous hunter
++ 9 - bear killed
++ 12 - witch house
++ 13 - witch
++ 14 - poison
++ 16 - returned back
++ 17 - village
++ 18 - tavern
++ 19 - farm in the village
++ 20 - mug of beer
++ 21 - tavern (drunk)
++ 23 - village in the night
