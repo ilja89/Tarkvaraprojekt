@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/main_menu/Buttons/MenuButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/main_menu/Continue comp pres.png" type="Texture" id=2]
+
+[node name="ContinueButton" instance=ExtResource( 1 )]
+anchor_left = 0.406
+anchor_top = 0.452
+anchor_right = 0.629
+anchor_bottom = 0.544
+margin_left = 0.47998
+margin_top = -0.160034
+margin_right = -0.680054
+margin_bottom = -0.52002
+
+[node name="Continue comp pres" type="Sprite" parent="." index="0"]
+position = Vector2( 213.299, 49.3728 )
+texture = ExtResource( 2 )
+
+[node name="Label" parent="." index="1"]
+visible = false
+text = "Continue"

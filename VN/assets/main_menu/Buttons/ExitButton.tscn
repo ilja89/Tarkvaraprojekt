@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/main_menu/Buttons/MenuButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/main_menu/EXIT comp pres.png" type="Texture" id=2]
+
+[node name="ExitButton" instance=ExtResource( 1 )]
+margin_right = 432.0
+margin_bottom = 447.0
+
+[node name="Label" parent="." index="0"]
+visible = false
+text = "Exit"
+
+[node name="EXIT comp pres" type="Sprite" parent="." index="1"]
+position = Vector2( 213.165, 45.2734 )
+scale = Vector2( 0.987139, 0.939871 )
+texture = ExtResource( 2 )

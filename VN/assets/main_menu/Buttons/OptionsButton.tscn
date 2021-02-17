@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/main_menu/Buttons/MenuButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/main_menu/SETTINGS comp pres.png" type="Texture" id=2]
+
+[node name="OptionsButton" instance=ExtResource( 1 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -180.0
+margin_top = -22.0
+margin_right = 248.0
+margin_bottom = 68.0
+
+[node name="SETTINGS comp pres" type="Sprite" parent="." index="0"]
+position = Vector2( 214.516, 45.8946 )
+texture = ExtResource( 2 )
+
+[node name="Label" parent="." index="1"]
+visible = false
+text = "Options"

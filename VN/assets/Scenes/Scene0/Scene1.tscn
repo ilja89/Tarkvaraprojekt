@@ -1,0 +1,134 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/Scenes/Scene0/Control2.gd" type="Script" id=1]
+[ext_resource path="res://assets/Scenes/Scene0/Verdana24.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/GUI/GUI.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/GUI/next.png" type="Texture" id=5]
+[ext_resource path="res://assets/Scenes/Scene0/1-original.jpg" type="Texture" id=6]
+[ext_resource path="res://assets/Scenes/Scene0/-_result_editedj.jpg" type="Texture" id=7]
+
+[sub_resource type="Gradient" id=1]
+colors = PoolColorArray( 0.0820313, 0.0820313, 0.0820313, 1, 0.269531, 0.269531, 0.269531, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "IDLE"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -25, 0 ), Vector2( 0, 0 ) ]
+}
+
+[node name="MarginContainer" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="1-original" type="Sprite" parent="."]
+visible = false
+position = Vector2( 960, 480 )
+texture = ExtResource( 6 )
+
+[node name="-_result_editedj" type="Sprite" parent="."]
+visible = false
+scale = Vector2( 0.665228, 0.683379 )
+texture = ExtResource( 7 )
+centered = false
+region_rect = Rect2( 2523.25, 2394.63, 1164.38, 361.125 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_right = 1280.0
+margin_bottom = 720.0
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="HBoxContainer"]
+margin_right = 1280.0
+margin_bottom = 720.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Control" type="Control" parent="."]
+margin_right = 1280.0
+margin_bottom = 720.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DialogBox" type="Control" parent="Control"]
+anchor_top = 0.676852
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Control/DialogBox"]
+modulate = Color( 1, 1, 1, 0.784314 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/DialogBox"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = -50.0
+custom_fonts/normal_font = ExtResource( 2 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/DialogBox"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -80.0
+margin_top = -80.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NextIcon" type="Sprite" parent="Control/DialogBox/VBoxContainer"]
+position = Vector2( -7.67448, 0 )
+scale = Vector2( 0.324, 0.217 )
+texture = ExtResource( 5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/DialogBox/VBoxContainer/NextIcon"]
+autoplay = "IDLE"
+anims/IDLE = SubResource( 4 )
+
+[node name="Tween" type="Tween" parent="Control/DialogBox"]
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+anchor_bottom = 1.0
+margin_right = 1280.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GUI" parent="Control/TextureRect" instance=ExtResource( 4 )]
+[connection signal="tree_exited" from="Control" to="." method="_on_Control_tree_exited"]
+[connection signal="tween_completed" from="Control/DialogBox/Tween" to="Control" method="_on_Tween_tween_completed"]
