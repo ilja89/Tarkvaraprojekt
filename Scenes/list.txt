@@ -17,3 +17,7 @@
 + 20 - mug of beer
 + 21 - tavern (drunk)
 + 23 - village in the night
++ 24 - strange man in night village
++ 25 - sword after killing the strange man
++ 26 - scarecrow in village
++ 27 - crowded village
