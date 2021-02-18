@@ -21,3 +21,10 @@
 + 25 - sword after killing the strange man
 + 26 - scarecrow in village
 + 27 - crowded village
++ 28 - talked to scarecrow
++ 30 - a thug kills a character
++ 33 - work on farm is finished
++ 34 - farmer ending
++ 35 - people in tavern talking about sth
++ 36 - scary necromancer
++ 37 - castle of holy order
