@@ -15,7 +15,7 @@ margin_right = 222.0
 margin_bottom = 43.0
 texture_normal = ExtResource( 3 )
 texture_pressed = ExtResource( 2 )
-scene_to_load = "res://assets\\Scenes\\Scene0\\Scene0.tscn"
+scene_to_load = "res://assets\\Scenes\\Scene0\\Scene00.tscn"
 
 [node name="Label" parent="." index="0"]
 visible = false

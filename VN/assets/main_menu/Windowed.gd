@@ -1,4 +1,4 @@
-extends CheckButton
+extends Button
 
 func _ready():
 	get_tree().get_root().connect("size_changed", self, "_on_window_resized")

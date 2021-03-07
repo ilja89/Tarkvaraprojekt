@@ -1,4 +1,4 @@
-extends CheckButton
+extends Button
 
 
 func _ready():
