@@ -23,8 +23,9 @@ config/version="0.0.1"
 [autoload]
 
 CharacterStats="*res://Stats.gd"
-Music="*res://Music.tscn"
 Items="*res://Items.gd"
+SaveGame="*res://SaveGame.gd"
+MusicController="*res://assets/Music/MusicController.tscn"
 
 [display]
 

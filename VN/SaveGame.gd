@@ -1,0 +1,57 @@
+extends Node
+
+var saves = []
+var savecount
+
+func _ready():
+	list_files_in_directory("res://saves/")
+	savecount = saves.size()
+
+func save_game(filename):
+	for i in savecount:
+		if "%s.save"%filename == saves[i]:
+			savecount -= 1
+			break
+	savecount += 1
+	var save_game = File.new()
+	var savepath
+	if filename == "":
+		savepath = "res://saves/savegame%d.save" %savecount
+	else:
+		savepath = "res://saves/%s.save" %filename
+	save_game.open(savepath, File.WRITE)
+	var save_nodes = get_tree().get_nodes_in_group("saved")
+	for node in save_nodes:
+		var node_data = node.call("save")
+		save_game.store_line(to_json(node_data))
+	save_game.close()
+	list_files_in_directory("res://saves/")
+
+func load_game(savegame):
+	var save_game = File.new()
+	if not save_game.file_exists("res://saves/%s" %savegame):
+		return # Error! We don't have a save to load.
+	save_game.open("res://saves/%s" %savegame, File.READ)
+	while save_game.get_position() < save_game.get_len():
+		var node_data = parse_json(save_game.get_line())
+		for i in node_data.keys():
+			CharacterStats.family = node_data['characterf']
+			CharacterStats.trait = node_data['charactert']
+			CharacterStats.job = node_data['characterj']
+			CharacterStats.motivation = node_data['characterm']
+			get_tree().change_scene(node_data['filename'])
+	save_game.close()
+
+func list_files_in_directory(path):
+	saves.clear()
+	var dir = Directory.new()
+	dir.open(path)
+	dir.list_dir_begin(true, true)
+	while true:
+		var file = dir.get_next()
+		if file == "":
+			break
+		else:
+			saves.append(file)
+	dir.list_dir_end()
+	return saves
