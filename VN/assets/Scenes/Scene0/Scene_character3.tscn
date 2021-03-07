@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Character3.gd" type="Script" id=1]
 [ext_resource path="res://assets/Scenes/Scene0/Verdana24.tres" type="DynamicFont" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://assets/GUI/GUI.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/Scenes/Scene0/ChoiceButton.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/Scenes/Scene0/ParallaxBackground.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/GUI/Labels.tscn" type="PackedScene" id=9]
 
 [sub_resource type="Gradient" id=1]
 colors = PoolColorArray( 0.0820313, 0.0820313, 0.0820313, 1, 0.269531, 0.269531, 0.269531, 1 )
@@ -32,60 +33,29 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( -25, 0 ), Vector2( 0, 0 ) ]
 }
 
-[node name="MarginContainer" type="MarginContainer"]
+[node name="MarginContainer" type="MarginContainer" groups=[
+"saved",
+]]
 anchor_right = 1.0
 anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Character" type="Node" parent="."]
 script = ExtResource( 1 )
-
-[node name="Items" type="Node" parent="Character"]
-
-[node name="Label" type="Label" parent="Character"]
-margin_right = 40.0
-margin_bottom = 14.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label2" type="Label" parent="Character"]
-margin_top = 14.0
-margin_right = 40.0
-margin_bottom = 28.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Labels" parent="." instance=ExtResource( 9 )]
 
-[node name="Label3" type="Label" parent="Character"]
-margin_top = 28.0
-margin_right = 40.0
-margin_bottom = 42.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label4" type="Label" parent="Character"]
-margin_top = 42.0
-margin_right = 40.0
-margin_bottom = 56.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="VBoxContainer3" type="VBoxContainer" parent="Character"]
+[node name="VBoxContainer3" type="VBoxContainer" parent="."]
 margin_right = 1280.0
 margin_bottom = 720.0
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="Character/VBoxContainer3"]
+[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer3"]
 margin_right = 1280.0
 margin_bottom = 476.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="ChoiceButtons" type="VBoxContainer" parent="Character/VBoxContainer3"]
+[node name="ChoiceButtons" type="VBoxContainer" parent="VBoxContainer3"]
 visible = false
 margin_top = 214.0
 margin_right = 1280.0
@@ -94,7 +64,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 5 )
 
-[node name="TextureButton3" parent="Character/VBoxContainer3/ChoiceButtons" instance=ExtResource( 7 )]
+[node name="TextureButton3" parent="VBoxContainer3/ChoiceButtons" instance=ExtResource( 7 )]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -107,7 +77,7 @@ size_flags_horizontal = 3
 choice = "dragon"
 button_text = "[center]A dragon blew up your house[/center]"
 
-[node name="TextureButton4" parent="Character/VBoxContainer3/ChoiceButtons" instance=ExtResource( 7 )]
+[node name="TextureButton4" parent="VBoxContainer3/ChoiceButtons" instance=ExtResource( 7 )]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -120,7 +90,7 @@ size_flags_horizontal = 3
 choice = "money"
 button_text = "[center]You owe a large sum of money[/center]"
 
-[node name="TextureButton5" parent="Character/VBoxContainer3/ChoiceButtons" instance=ExtResource( 7 )]
+[node name="TextureButton5" parent="VBoxContainer3/ChoiceButtons" instance=ExtResource( 7 )]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -133,7 +103,7 @@ size_flags_horizontal = 3
 choice = "suicidal"
 button_text = "[center]You don't want to live anymore and are looking for death[/center]"
 
-[node name="TextureButton6" parent="Character/VBoxContainer3/ChoiceButtons" instance=ExtResource( 7 )]
+[node name="TextureButton6" parent="VBoxContainer3/ChoiceButtons" instance=ExtResource( 7 )]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -146,7 +116,7 @@ size_flags_horizontal = 3
 choice = "hero"
 button_text = "[center]You always wanted to do this and now is the chance[/center]"
 
-[node name="VBoxContainer4" type="VBoxContainer" parent="Character/VBoxContainer3"]
+[node name="VBoxContainer4" type="VBoxContainer" parent="VBoxContainer3"]
 margin_top = 480.0
 margin_right = 1280.0
 margin_bottom = 720.0
@@ -155,7 +125,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 0
 size_flags_stretch_ratio = 1.01
 
-[node name="Control" type="Control" parent="Character/VBoxContainer3/VBoxContainer4"]
+[node name="Control" type="Control" parent="VBoxContainer3/VBoxContainer4"]
 margin_right = 1280.0
 margin_bottom = 240.0
 size_flags_horizontal = 3
@@ -165,7 +135,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="DialogBox" type="Control" parent="Character/VBoxContainer3/VBoxContainer4/Control"]
+[node name="DialogBox" type="Control" parent="VBoxContainer3/VBoxContainer4/Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = -1.52588e-05
@@ -175,7 +145,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect" type="TextureRect" parent="Character/VBoxContainer3/VBoxContainer4/Control/DialogBox"]
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer3/VBoxContainer4/Control/DialogBox"]
 modulate = Color( 1, 1, 1, 0.784314 )
 anchor_left = 0.5
 anchor_top = 0.5
@@ -193,7 +163,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Character/VBoxContainer3/VBoxContainer4/Control/DialogBox"]
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer3/VBoxContainer4/Control/DialogBox"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 20.0
@@ -206,7 +176,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Character/VBoxContainer3/VBoxContainer4/Control/DialogBox"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer3/VBoxContainer4/Control/DialogBox"]
 visible = false
 anchor_left = 1.0
 anchor_top = 1.0
@@ -218,29 +188,34 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="NextIcon" type="Sprite" parent="Character/VBoxContainer3/VBoxContainer4/Control/DialogBox/VBoxContainer"]
+[node name="NextIcon" type="Sprite" parent="VBoxContainer3/VBoxContainer4/Control/DialogBox/VBoxContainer"]
 scale = Vector2( 0.324, 0.217 )
 texture = ExtResource( 4 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Character/VBoxContainer3/VBoxContainer4/Control/DialogBox/VBoxContainer/NextIcon"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VBoxContainer3/VBoxContainer4/Control/DialogBox/VBoxContainer/NextIcon"]
 autoplay = "IDLE"
 anims/IDLE = SubResource( 3 )
 
-[node name="Tween" type="Tween" parent="Character/VBoxContainer3/VBoxContainer4/Control/DialogBox"]
+[node name="Tween" type="Tween" parent="VBoxContainer3/VBoxContainer4/Control/DialogBox"]
 
-[node name="TextureRect" type="TextureRect" parent="Character/VBoxContainer3/VBoxContainer4/Control"]
-anchor_bottom = 1.0
+[node name="GUI" parent="VBoxContainer3/VBoxContainer4/Control" instance=ExtResource( 6 )]
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_top = 214.0
 margin_right = 1280.0
-margin_bottom = -6.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="GUI" parent="Character/VBoxContainer3/VBoxContainer4/Control/TextureRect" instance=ExtResource( 6 )]
-margin_top = -19.4
-margin_bottom = 6.0
+margin_bottom = 240.0
 
 [node name="ParallaxBackground" parent="." instance=ExtResource( 8 )]
-[connection signal="tree_exited" from="Character/VBoxContainer3/VBoxContainer4/Control" to="." method="_on_Control_tree_exited"]
-[connection signal="tween_completed" from="Character/VBoxContainer3/VBoxContainer4/Control/DialogBox/Tween" to="Character/VBoxContainer3/VBoxContainer4/Control" method="_on_Tween_tween_completed"]
+
+[node name="LineEdit" type="LineEdit" parent="."]
+visible = false
+margin_left = 540.0
+margin_top = 348.0
+margin_right = 740.0
+margin_bottom = 372.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+[connection signal="tween_completed" from="VBoxContainer3/VBoxContainer4/Control/DialogBox/Tween" to="VBoxContainer3/VBoxContainer4/Control" method="_on_Tween_tween_completed"]
+[connection signal="text_entered" from="LineEdit" to="." method="_on_LineEdit_text_entered"]

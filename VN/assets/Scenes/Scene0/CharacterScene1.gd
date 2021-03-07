@@ -17,3 +17,13 @@ func _ready():
 	for button in $VBoxContainer3/ChoiceButtons.get_children():
 		button.connect("pressed", self, "_on_Button_pressed", [button.choice])
 
+
+
+func save():
+	var save_dict = {
+		"filename" : get_tree().edited_scene_root.filename,
+		"characterstats" : CharacterStats,
+		"items" : Items,
+		"dialog_index" : $VBoxContainer3/VBoxContainer4/Control.dialog_index
+	}
+	return save_dict

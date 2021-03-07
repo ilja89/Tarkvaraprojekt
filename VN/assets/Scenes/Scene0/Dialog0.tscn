@@ -11,9 +11,6 @@ modulate = Color( 1, 1, 1, 0.784314 )
 [node name="RichTextLabel" parent="DialogBox" index="1"]
 text = ""
 
-[node name="NextIcon" parent="DialogBox/VBoxContainer" index="0"]
-visible = true
-
 [node name="TextureRect" type="TextureRect" parent="." index="1"]
 anchor_bottom = 1.0
 margin_right = 1280.0

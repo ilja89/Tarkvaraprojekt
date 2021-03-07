@@ -1,16 +1,8 @@
 extends Control
 
 
-var dialog_index = 0
 var finished = false
 
-var dialog = [
-	'You were born to a ...'
-]
-
-func _ready():
-	load_dialog()
-	
 
 #func _process(_delta):
 #	$DialogBox/VBoxContainer/NextIcon.visible = finished
@@ -18,17 +10,13 @@ func _ready():
 #		load_dialog()
 
 
-func load_dialog():
+func load_dialog(dialog, dialog_index):
 	if dialog_index < dialog.size():
 		finished = false
 		$DialogBox/RichTextLabel.bbcode_text = dialog[dialog_index]
 		$DialogBox/RichTextLabel.percent_visible = 0
 		$DialogBox/Tween.interpolate_property($DialogBox/RichTextLabel, "percent_visible", 0, 1, 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 		$DialogBox/Tween.start()
-	else:
-		queue_free()
-		get_tree().change_scene("res://assets/Scenes/Scene0/Scene0.tscn")
-	dialog_index += 1
 
 
 

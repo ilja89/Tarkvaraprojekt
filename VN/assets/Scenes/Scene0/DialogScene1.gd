@@ -1,15 +1,17 @@
 extends Control
 
 
-var dialog_index = 0
+export var dialog_index = 0
 var finished = false
 
 var dialog = [
 
 	'You come up to a crossroads',
-	"This part isn't finished",
-
+	"You walk for hours, but the scenery around you doesn't change",
+	"Suddenly, you find yourself back at the crossroads"
+	
 ]
+
 
 func _ready():
 	load_dialog()
@@ -18,7 +20,8 @@ func _ready():
 func _process(_delta):
 #	$DialogBox/VBoxContainer/NextIcon.visible = finished
 	if Input.is_action_just_pressed("ui_accept"):
-		load_dialog()
+		if dialog_index > 1:
+			load_dialog()
 
 
 func load_dialog():
@@ -30,7 +33,6 @@ func load_dialog():
 		$DialogBox/Tween.start()
 	else:
 		queue_free()
-		get_tree().change_scene("res://assets/Scenes/Scene0/Scene0.tscn")
 	dialog_index += 1
 
 
