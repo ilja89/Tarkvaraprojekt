@@ -6,7 +6,7 @@ var trait : String
 var job : String
 var motivation : String
 
-var SaveMenu = false
+var SaveMenu : bool
 
 
 signal exit_menu
