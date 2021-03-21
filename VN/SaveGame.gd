@@ -1,24 +1,34 @@
 extends Node
 
+var saving = false
 var saves = []
 var savecount
+var bar
 
 func _ready():
 	list_files_in_directory("res://saves/")
 	savecount = saves.size()
 
-func save_game(filename):
-	for i in savecount:
-		if "%s.save"%filename == saves[i]:
-			savecount -= 1
-			break
-	savecount += 1
+func save_game(filename : String):
+	list_files_in_directory("res://saves/")
 	var save_game = File.new()
 	var savepath
 	if filename == "":
-		savepath = "res://saves/savegame%d.save" %savecount
+		bar = false
+		for i in savecount + 1:
+			for j in savecount:
+				if "savegame%d.save" %i == saves[j]:
+					bar = true
+					break
+			if not bar:
+				savepath = "res://saves/savegame%d.save" %i
+				break
+			elif bar :
+				bar = false
 	else:
 		savepath = "res://saves/%s.save" %filename
+#	if savecount == 0:
+#		savepath = "res://saves/savegame0.save"
 	save_game.open(savepath, File.WRITE)
 	var save_nodes = get_tree().get_nodes_in_group("saved")
 	for node in save_nodes:
@@ -54,4 +64,5 @@ func list_files_in_directory(path):
 		else:
 			saves.append(file)
 	dir.list_dir_end()
+	savecount = saves.size()
 	return saves
