@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://Character1.gd" type="Script" id=1]
+[ext_resource path="res://assets/Scenes/Scene0/Character1.gd" type="Script" id=1]
 [ext_resource path="res://assets/Scenes/Scene0/Verdana24.tres" type="DynamicFont" id=2]
 [ext_resource path="res://assets/Scenes/Scene0/Dialog1.gd" type="Script" id=3]
 [ext_resource path="res://assets/GUI/next.png" type="Texture" id=4]
