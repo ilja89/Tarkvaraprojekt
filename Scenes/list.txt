@@ -28,3 +28,7 @@
 + 35 - people in tavern talking about sth
 + 36 - scary necromancer
 + 37 - castle of holy order
++ 38 - no problems path to order
++ 39 - bandits attacking the caravan
++ 40 - bandits killed
++ 42 - holy order chief
