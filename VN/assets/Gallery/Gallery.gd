@@ -14,8 +14,11 @@ func _ready():
 
 func upd():
 	print("UPDATE")
-	print(str(current)+" - "+str(fname) + " - " + str(fname[current]))
-	$author.text = data[current]
+	print(str(current)+" - " + str(fname[current]))
+	if(str(data[current])!="-"):
+		$author.text = data[current]
+	else:
+		$author.text = ""
 	$picture.texture = load("res://assets/Scenes/Backgrounds/"+str(fname[current])+".png")
 	$current_number.text = (str(current)+" of "+str(maximal))
 
