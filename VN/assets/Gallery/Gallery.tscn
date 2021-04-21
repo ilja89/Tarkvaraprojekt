@@ -9,24 +9,24 @@ size = 46
 use_filter = true
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=2]
 size = 25
 use_filter = true
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=3]
 size = 43
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 use_filter = true
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=4]
 size = 25
 use_filter = true
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=5]
 size = 50
 font_data = ExtResource( 3 )
 
@@ -81,7 +81,7 @@ margin_left = 1184.0
 margin_top = 568.0
 margin_right = 1256.0
 margin_bottom = 606.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "NEXT"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -92,7 +92,7 @@ margin_left = 1040.0
 margin_top = 568.0
 margin_right = 1112.0
 margin_bottom = 606.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "PREV"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -103,7 +103,7 @@ margin_left = 1128.0
 margin_top = 568.0
 margin_right = 1168.0
 margin_bottom = 608.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 toggle_mode = true
 text = "S"
 __meta__ = {
@@ -115,7 +115,7 @@ margin_left = 1040.0
 margin_top = 616.0
 margin_right = 1146.0
 margin_bottom = 680.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 3 )
 clear_button_enabled = true
 caret_blink = true
 __meta__ = {
@@ -127,7 +127,7 @@ margin_left = 1080.0
 margin_top = 680.0
 margin_right = 1208.0
 margin_bottom = 712.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 4 )
 text = "90 of 110"
 align = 1
 valign = 1
@@ -139,7 +139,7 @@ __meta__ = {
 margin_left = 128.0
 margin_right = 1152.0
 margin_bottom = 64.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "AUTHOR:"
 valign = 1
 __meta__ = {
@@ -151,3 +151,4 @@ __meta__ = {
 [connection signal="pressed" from="next" to="." method="next"]
 [connection signal="pressed" from="prev" to="." method="prev"]
 [connection signal="pressed" from="stretch" to="." method="stretch"]
+[connection signal="text_changed" from="input" to="." method="_on_input_text_changed"]

@@ -91,3 +91,10 @@ func stretch():
 
 func _on_menu_pressed():
 	get_tree().change_scene("res://assets/main_menu/MainMenu.tscn")
+
+
+func _on_input_text_changed(new_text):
+	if(int($input.text)<1):
+		$input.text="1"
+	elif(int($input.text)>maximal):
+		$input.text=str(maximal)
