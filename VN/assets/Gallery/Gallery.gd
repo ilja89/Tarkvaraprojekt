@@ -5,6 +5,9 @@ var data = ["string"]
 var file : File
 var current=1
 var maximal=1
+var mouse_prev_position: Vector2
+var picture_size: Vector2 = Vector2(1280,720)
+var picture_prev_size: Vector2
 
 func _ready():
 	file = File.new()
@@ -14,7 +17,7 @@ func _ready():
 
 func upd():
 	print("UPDATE")
-	print(str(current)+" - " + str(fname[current]))
+	print(str(current)+" - " + str(fname[current])+".png")
 	if(str(data[current])!="-"):
 		$author.text = data[current]
 	else:
@@ -101,3 +104,29 @@ func _on_input_text_changed(new_text):
 		$input.text="1"
 	elif(int($input.text)>maximal):
 		$input.text=str(maximal)
+
+func _input(event):
+	if Input.is_action_just_pressed("mouse_right"):
+		mouse_prev_position=get_viewport().get_mouse_position()
+	elif Input.is_action_pressed("mouse_right"):
+		var move:Vector2 = mouse_prev_position - get_viewport().get_mouse_position()
+		$picture.rect_position-=move
+		mouse_prev_position=get_viewport().get_mouse_position()
+	if Input.is_action_pressed("scroll_up"):
+		picture_prev_size=$picture.rect_size
+		$picture.rect_size=$picture.rect_size*1.1
+		$picture.rect_position=$picture.rect_position+(picture_prev_size-$picture.rect_size)/2
+	if Input.is_action_pressed("scroll_down"):
+		picture_prev_size=$picture.rect_size
+		$picture.rect_size=$picture.rect_size*0.9
+		$picture.rect_position=$picture.rect_position+(picture_prev_size-$picture.rect_size)/2
+	if Input.is_action_pressed("ui_accept"):
+		$picture.rect_size=picture_size
+		$picture.rect_position=Vector2(0,0)
+	if Input.is_action_just_pressed("hide"):
+		if($hide.pressed==false):
+			$hide.pressed=true
+			_on_hide_pressed()
+		else:
+			$hide.pressed=false
+			_on_hide_pressed()
