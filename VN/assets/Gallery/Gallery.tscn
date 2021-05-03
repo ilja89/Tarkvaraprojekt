@@ -1,0 +1,177 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/Gallery/Gallery.gd" type="Script" id=1]
+[ext_resource path="res://assets/Gallery/background.png" type="Texture" id=2]
+[ext_resource path="res://assets/GUI/fonts/impact.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/Scenes/Backgrounds/6.png" type="Texture" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 46
+use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 25
+use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 43
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 25
+use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 50
+font_data = ExtResource( 3 )
+
+[node name="Gallery" type="Node"]
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+show_behind_parent = true
+position = Vector2( 960, 540 )
+scale = Vector2( 1920, 1080 )
+texture = ExtResource( 2 )
+
+[node name="picture" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_pivot_offset = Vector2( 512, 512 )
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 7
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="goto" type="Button" parent="."]
+margin_left = 1745.0
+margin_top = 961.0
+margin_right = 1853.0
+margin_bottom = 1025.0
+focus_mode = 0
+custom_fonts/font = SubResource( 1 )
+enabled_focus_mode = 0
+text = "GOTO"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="hide" type="Button" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -64.0
+margin_bottom = 63.0
+focus_mode = 0
+custom_fonts/font = SubResource( 1 )
+toggle_mode = true
+enabled_focus_mode = 0
+text = "-"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="menu" type="Button" parent="."]
+margin_left = 48.0
+margin_top = 961.218
+margin_right = 240.0
+margin_bottom = 1025.22
+focus_mode = 0
+custom_fonts/font = SubResource( 1 )
+enabled_focus_mode = 0
+text = "MENU"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="next" type="Button" parent="."]
+margin_left = 1767.01
+margin_top = 915.291
+margin_right = 1839.01
+margin_bottom = 953.291
+focus_mode = 0
+custom_fonts/font = SubResource( 2 )
+enabled_focus_mode = 0
+text = "NEXT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="prev" type="Button" parent="."]
+margin_left = 1641.76
+margin_top = 915.335
+margin_right = 1713.76
+margin_bottom = 953.335
+focus_mode = 0
+custom_fonts/font = SubResource( 2 )
+enabled_focus_mode = 0
+text = "PREV"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="stretch" type="Button" parent="."]
+margin_left = 1720.44
+margin_top = 914.482
+margin_right = 1760.44
+margin_bottom = 954.482
+focus_mode = 0
+custom_fonts/font = SubResource( 2 )
+toggle_mode = true
+enabled_focus_mode = 0
+text = "S"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="input" type="LineEdit" parent="."]
+margin_left = 1627.0
+margin_top = 961.0
+margin_right = 1733.0
+margin_bottom = 1025.0
+custom_fonts/font = SubResource( 3 )
+clear_button_enabled = true
+caret_blink = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="current_number" type="Label" parent="."]
+margin_left = 1676.0
+margin_top = 1033.0
+margin_right = 1804.0
+margin_bottom = 1065.0
+custom_fonts/font = SubResource( 4 )
+text = "90 of 110"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="author" type="Label" parent="."]
+margin_left = 128.0
+margin_right = 1152.0
+margin_bottom = 64.0
+custom_fonts/font = SubResource( 5 )
+text = "AUTHOR:"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="goto" to="." method="goto"]
+[connection signal="pressed" from="hide" to="." method="_on_hide_pressed"]
+[connection signal="pressed" from="menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="next" to="." method="next"]
+[connection signal="pressed" from="prev" to="." method="prev"]
+[connection signal="pressed" from="stretch" to="." method="stretch"]
+[connection signal="text_changed" from="input" to="." method="_on_input_text_changed"]
