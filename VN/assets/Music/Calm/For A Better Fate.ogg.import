@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/For A Better Fate.ogg-e7626bb878f06e6bc6a1f405e46009ec.oggstr"
+
+[deps]
+
+source_file="res://assets/Music/Calm/For A Better Fate.ogg"
+dest_files=[ "res://.import/For A Better Fate.ogg-e7626bb878f06e6bc6a1f405e46009ec.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

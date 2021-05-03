@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Town Square.ogg-e79c4b46c48a98b043a887a2e10c2e36.oggstr"
+
+[deps]
+
+source_file="res://assets/Music/Calm/Town Square.ogg"
+dest_files=[ "res://.import/Town Square.ogg-e79c4b46c48a98b043a887a2e10c2e36.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

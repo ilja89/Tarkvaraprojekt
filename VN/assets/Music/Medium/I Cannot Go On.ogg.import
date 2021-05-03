@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/I Cannot Go On.ogg-b586a5b11d597c5d7ad7584aff6e7a37.oggstr"
+
+[deps]
+
+source_file="res://assets/Music/Medium/I Cannot Go On.ogg"
+dest_files=[ "res://.import/I Cannot Go On.ogg-b586a5b11d597c5d7ad7584aff6e7a37.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

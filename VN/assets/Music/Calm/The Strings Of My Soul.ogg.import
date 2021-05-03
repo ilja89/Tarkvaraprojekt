@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/The Strings Of My Soul.ogg-3703b4cd5b174d734c5a1101811d277b.oggstr"
+
+[deps]
+
+source_file="res://assets/Music/Calm/The Strings Of My Soul.ogg"
+dest_files=[ "res://.import/The Strings Of My Soul.ogg-3703b4cd5b174d734c5a1101811d277b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

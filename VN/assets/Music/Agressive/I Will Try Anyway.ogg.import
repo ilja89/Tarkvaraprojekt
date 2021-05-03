@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/I Will Try Anyway.ogg-0b511870ecfeff43c2f1b5b2d668ec3f.oggstr"
+
+[deps]
+
+source_file="res://assets/Music/Agressive/I Will Try Anyway.ogg"
+dest_files=[ "res://.import/I Will Try Anyway.ogg-0b511870ecfeff43c2f1b5b2d668ec3f.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/We Come In Loud.ogg-201ab6dbbc847f1b791f8a5c5dec0e77.oggstr"
+
+[deps]
+
+source_file="res://assets/Music/Agressive/We Come In Loud.ogg"
+dest_files=[ "res://.import/We Come In Loud.ogg-201ab6dbbc847f1b791f8a5c5dec0e77.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

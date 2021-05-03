@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Striving For The Great.ogg-25523af158e86c4c4a4476149ccaa642.oggstr"
+
+[deps]
+
+source_file="res://assets/Music/Calm/Striving For The Great.ogg"
+dest_files=[ "res://.import/Striving For The Great.ogg-25523af158e86c4c4a4476149ccaa642.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

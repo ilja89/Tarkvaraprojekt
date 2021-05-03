@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Life Crossings.ogg-cc40b17c4e42ecb3230a02233cea5ad0.oggstr"
+
+[deps]
+
+source_file="res://assets/Music/Agressive/Life Crossings.ogg"
+dest_files=[ "res://.import/Life Crossings.ogg-cc40b17c4e42ecb3230a02233cea5ad0.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

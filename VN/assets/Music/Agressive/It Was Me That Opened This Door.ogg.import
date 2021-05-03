@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/It Was Me That Opened This Door.ogg-12308fb70f8e7519b571cbed3b389c21.oggstr"
+
+[deps]
+
+source_file="res://assets/Music/Agressive/It Was Me That Opened This Door.ogg"
+dest_files=[ "res://.import/It Was Me That Opened This Door.ogg-12308fb70f8e7519b571cbed3b389c21.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

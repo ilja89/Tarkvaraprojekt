@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/From Mysteries To Discoveries.ogg-2d4b18985f333891a6c9e4c4c4d44c23.oggstr"
+
+[deps]
+
+source_file="res://assets/Music/Medium/From Mysteries To Discoveries.ogg"
+dest_files=[ "res://.import/From Mysteries To Discoveries.ogg-2d4b18985f333891a6c9e4c4c4d44c23.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

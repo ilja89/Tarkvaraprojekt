@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Path To Future.ogg-4c4d236a792cacfb441d4ed6add355c4.oggstr"
+
+[deps]
+
+source_file="res://assets/Music/Agressive/Path To Future.ogg"
+dest_files=[ "res://.import/Path To Future.ogg-4c4d236a792cacfb441d4ed6add355c4.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

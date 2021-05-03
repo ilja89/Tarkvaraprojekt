@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Picnic By The Pond.ogg-b2bdfef659fad51cc5f616f5aec4d452.oggstr"
+
+[deps]
+
+source_file="res://assets/Music/Calm/Picnic By The Pond.ogg"
+dest_files=[ "res://.import/Picnic By The Pond.ogg-b2bdfef659fad51cc5f616f5aec4d452.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
