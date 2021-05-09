@@ -2,7 +2,6 @@
 
 [ext_resource path="res://assets/Music/MusicController.gd" type="Script" id=1]
 
-
 [node name="MusicController" type="Control"]
 pause_mode = 2
 anchor_right = 1.0

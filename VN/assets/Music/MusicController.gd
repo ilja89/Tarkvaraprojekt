@@ -27,6 +27,7 @@ func start(track_url : String, manual : bool):
 	if is_manual_music == manual:
 		if not track_url == music_directory:
 			fade_finished = false
+			_player2.volume_db = -80
 			var _player3 = _player
 			_player = _player2
 			_player2 = _player3
@@ -42,7 +43,7 @@ func start(track_url : String, manual : bool):
 			current = _player.stream.get_length()
 			played = 0
 			_player.play()
-			$Tween2.interpolate_property(_player, "volume_db", -80, volume, 3, Tween.TRANS_EXPO, Tween.EASE_IN_OUT)
+			$Tween2.interpolate_property(_player, "volume_db", -80, volume, 4, Tween.TRANS_EXPO, Tween.EASE_IN_OUT)
 			$Tween2.start()
 
 func next():
