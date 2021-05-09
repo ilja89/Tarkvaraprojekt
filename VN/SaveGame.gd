@@ -4,6 +4,7 @@ var saving = false
 var saves = []
 var savecount
 var bar
+var menu : bool
 
 func _ready():
 	list_files_in_directory("res://saves/")
