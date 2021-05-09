@@ -1,0 +1,234 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://assets/Scenes/Backgrounds/126.png" type="Texture" id=1]
+[ext_resource path="res://assets/Scenes/Main scenes/2/11/Dialog.gd" type="Script" id=2]
+[ext_resource path="res://assets/GUI/next.png" type="Texture" id=3]
+[ext_resource path="res://assets/Scenes/Main scenes/0/Verdana24.tres" type="DynamicFont" id=4]
+[ext_resource path="res://assets/Scenes/Main scenes/2/11/SceneY.gd" type="Script" id=5]
+[ext_resource path="res://assets/GUI/GUI.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/Scenes/Main scenes/0/ParallaxBackground.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/Scenes/Main scenes/0/ChoiceButton.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/GUI/Labels.tscn" type="PackedScene" id=9]
+
+[sub_resource type="Gradient" id=1]
+colors = PoolColorArray( 0.0820313, 0.0820313, 0.0820313, 1, 0.269531, 0.269531, 0.269531, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "IDLE"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -25, 0 ), Vector2( 0, 0 ) ]
+}
+
+[node name="MarginContainer" type="MarginContainer" groups=[
+"saved",
+]]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Labels" parent="." instance=ExtResource( 9 )]
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="."]
+margin_right = 1280.0
+margin_bottom = 720.0
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer3"]
+margin_right = 1280.0
+margin_bottom = 476.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ChoiceButtons" type="VBoxContainer" parent="VBoxContainer3"]
+visible = false
+margin_top = 322.0
+margin_right = 1280.0
+margin_bottom = 394.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+
+[node name="TextureButton3" parent="VBoxContainer3/ChoiceButtons" instance=ExtResource( 8 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 1280.0
+margin_bottom = 34.0
+size_flags_horizontal = 3
+choice = "1"
+button_text = "[center]Time for something new... [/center]"
+
+[node name="TextureButton4" parent="VBoxContainer3/ChoiceButtons" instance=ExtResource( 8 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 38.0
+margin_right = 1280.0
+margin_bottom = 72.0
+size_flags_horizontal = 3
+choice = "2"
+button_text = "[center]No more tyranny...[/center]"
+
+[node name="TextureButton5" parent="VBoxContainer3/ChoiceButtons" instance=ExtResource( 8 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 76.0
+margin_right = 1280.0
+margin_bottom = 110.0
+size_flags_horizontal = 3
+choice = "3"
+button_text = "[center]You were a terrible ruler...[/center]"
+
+[node name="TextureButton6" parent="VBoxContainer3/ChoiceButtons" instance=ExtResource( 8 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 76.0
+margin_right = 1280.0
+margin_bottom = 110.0
+size_flags_horizontal = 3
+choice = "4"
+button_text = "[center]Rest in peace...[/center]"
+
+[node name="TextureButton7" parent="VBoxContainer3/ChoiceButtons" instance=ExtResource( 8 )]
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 192.0
+margin_right = 1280.0
+margin_bottom = 226.0
+size_flags_horizontal = 3
+choice = "priest"
+button_text = "[center]Priest[/center]"
+
+[node name="TextureButton9" parent="VBoxContainer3/ChoiceButtons" instance=ExtResource( 8 )]
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 200.0
+margin_right = 1280.0
+margin_bottom = 234.0
+size_flags_horizontal = 3
+choice = "artist"
+button_text = "[center]Artist[/center]"
+
+[node name="TextureButton8" parent="VBoxContainer3/ChoiceButtons" instance=ExtResource( 8 )]
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 228.0
+margin_right = 1280.0
+margin_bottom = 262.0
+size_flags_horizontal = 3
+choice = "orphan"
+button_text = "[center]You were an orphan[/center]"
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="VBoxContainer3"]
+margin_top = 480.0
+margin_right = 1280.0
+margin_bottom = 720.0
+rect_min_size = Vector2( 0, 240 )
+size_flags_horizontal = 3
+size_flags_vertical = 0
+size_flags_stretch_ratio = 1.01
+
+[node name="Control" type="Control" parent="VBoxContainer3/VBoxContainer4"]
+margin_right = 1280.0
+margin_bottom = 240.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DialogBox" type="Control" parent="VBoxContainer3/VBoxContainer4/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -1.52588e-05
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer3/VBoxContainer4/Control/DialogBox"]
+modulate = Color( 1, 1, 1, 0.784314 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -960.0
+margin_top = -120.0
+margin_right = 960.0
+margin_bottom = 112.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer3/VBoxContainer4/Control/DialogBox"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = -50.0
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+
+
+[node name="Tween" type="Tween" parent="VBoxContainer3/VBoxContainer4/Control/DialogBox"]
+
+[node name="GUI" parent="VBoxContainer3/VBoxContainer4/Control" instance=ExtResource( 6 )]
+
+[node name="ParallaxBackground" parent="." instance=ExtResource( 7 )]
+
+[node name="TextureRect" parent="ParallaxBackground" index="0"]
+texture = ExtResource( 1 )
+stretch_mode = 7
+
+
+
+[editable path="ParallaxBackground"]
