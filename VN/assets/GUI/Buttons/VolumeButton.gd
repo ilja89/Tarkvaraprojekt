@@ -13,7 +13,7 @@ func _process(_delta):
 		$HBoxContainer/MarginContainer/Button/Speaker.visible = true
 
 
-func _on_Button_toggled(button_pressed):
+func _on_Button_toggled(_button_pressed):
 	$HBoxContainer/HSlider.visible = !$HBoxContainer/HSlider.visible
 
 
