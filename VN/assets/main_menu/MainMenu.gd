@@ -1,4 +1,4 @@
-extends MarginContainer
+extends Control
 
 
 # Declare member variables here. Examples:
@@ -8,6 +8,7 @@ var scene
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	MusicController.start("res://assets/Music/Calm/", false)
 	if CharacterStats.FirstLaunch == true:
 		load_stats()
 		CharacterStats.FirstLaunch = false
@@ -16,8 +17,7 @@ func _ready():
 	$"/root/CharacterStats".connect("exit_menu", self, "_exit_menu")
 	for button in $HBoxContainer/VBoxContainer/VBoxContainer/Buttons.get_children():
 		button.connect("pressed", self, "_on_Button_pressed", [button.scene_to_load])
-	MusicController.start("res://assets/Music/Calm/", false)
-	MusicController.start("res://assets/Music/Calm/", true)
+
 
 
 func _on_Button_pressed(_scene_to_load):
@@ -25,6 +25,7 @@ func _on_Button_pressed(_scene_to_load):
 
 
 func _on_ContinueButton_pressed():
+	SaveGame.menu = true
 	SaveGame.saving = false
 	scene = preload("res://assets/GUI/SaveMenu.tscn").instance()
 	add_child(scene)

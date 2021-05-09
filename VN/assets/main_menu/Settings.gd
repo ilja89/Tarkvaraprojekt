@@ -23,14 +23,26 @@ func _on_HSlider_value_changed(value):
 
 
 func _on_Button_pressed():
+	for button in $VBoxContainer/HBoxContainer/VBoxContainer2/VBoxContainer.get_children():
+		for text in button.get_children():
+			if text.text != "Calm":
+				button.pressed = false
 	MusicController.start("res://assets/Music/Calm/", true)
 
 
 func _on_Button2_pressed():
+	for button in $VBoxContainer/HBoxContainer/VBoxContainer2/VBoxContainer.get_children():
+		for text in button.get_children():
+			if text.text != "Agressive":
+				button.pressed = false
 	MusicController.start("res://assets/Music/Agressive/", true)
 
 
 func _on_Button3_pressed():
+	for button in $VBoxContainer/HBoxContainer/VBoxContainer2/VBoxContainer.get_children():
+		for text in button.get_children():
+			if text.text != "Medium":
+				button.pressed = false
 	MusicController.start("res://assets/Music/Medium/", true)
 
 
