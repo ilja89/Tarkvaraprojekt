@@ -8,7 +8,7 @@ var scene
 func _on_Button_pressed(choice):
 	$VBoxContainer3/ChoiceButtons.visible = false
 	if choice == "continue":
-		get_tree().change_scene("res://assets/Scenes/Battles/5/BattleTemplate.tscn")
+		get_tree().change_scene("res://assets/Scenes/Battles/6/BattleTemplate.tscn")
 	if choice == "mercy":
 		$VBoxContainer3/VBoxContainer4/Control.load_dialog()
 
